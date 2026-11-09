@@ -1,17 +1,26 @@
-# Rinse — car wash pitch wireframe
+# Rinse — expanded car wash pitch demo
 
-A responsive, static customer app concept, ready for GitHub Pages. No build step or dependencies.
+A static, responsive concept hosted on GitHub Pages. No build step or dependencies.
 
-## Present the concept
+## Pitch walkthrough
 
-Open index.html or serve this folder with a local web server. Enter a 10-digit Indian phone number and use demo OTP **123456**, then add a car. Alternatively choose **Explore with a demo account** to start with 3 washes remaining.
+1. Choose **Explore customer demo**. The Hyundai i20 starts with 3 of 4 Essential washes remaining; a second vehicle has no package.
+2. Select **Book a wash**, choose an available time tomorrow and confirm. Two sample bookings make 10:00–11:00 unavailable on both bays.
+3. Switch **Explore the concept** to **Staff dashboard preview**. Find the new booking and move it through Arrived → In Progress → Completed.
+4. Return to Customer preview: the wash balance has decreased once. Completion and expiry messages appear under Reminders.
+5. Switch to Owner preview to edit opening hours, available bays, closures, provisional service prices and durations. Existing bookings retain their price/duration.
+6. Use My cars to add sample vehicles; choose a car without an active package to demonstrate purchase. OTP code is **123456**.
 
-The clickable journey covers login, car registration, all three packages (₹299 / ₹999 / ₹1,800), simulated checkout, wallet, wash redemption, reminder previews, and editing car details. Restart demo resets the experience. Data is held in memory and resets on refresh; do not enter personal information.
+## Demonstration assumptions
 
-The 14-day wash interval and 21 October sample reminder date are pitch assumptions. Package washes are prepaid credits, not additional free washes. OTP/SMS, payments, QR scanning and actual push delivery are not integrated.
+Four service tiers have provisional prices/durations: Essential ₹299/30min, Complete ₹499/45min, Premium ₹699/60min, Signature ₹999/90min. These replace the original simplified pitch prices and are not commercial offers. Package choices are 1/4/8/12 washes with no example discount and 30-day validity, manual renewal, per-car/per-service credits. Vehicle category surcharges are not implemented. One active package per car/service. A booking reserves a credit; staff completion deducts it. Pay-at-centre bookings require demo payment confirmation before completion. Cancellation is allowed while Booked and before start, without a fee.
 
-## GitHub Pages
+The in-memory scheduler prevents overlapping reservations per bay and overlapping bookings for the same vehicle within this tab. This does not provide production-safe concurrency across browsers. No shared backend, persistent database, real OTP, payments, access control or messaging exists. Changes reset on refresh. Role switching and staff enable/disable are illustrative, not authentication. Do not enter real customer details.
 
-Create a GitHub repository and upload index.html, style.css and app.js to its root. In Settings → Pages select **Deploy from a branch**, then **main** and **/(root)**. Save. Use the resulting Pages URL as the destination for a printed QR code.
+Advanced reporting/export, refunds, rescheduling, walk-in entry, manager balance corrections, feedback, automatic renewal, photo uploads, referrals and multi-location support are outside this wireframe. Owner changes affect new availability; existing bookings need review. Final business rules and pricing remain subject to agreement.
 
-An actual scannable QR should be created after the public URL is available.
+## Hosting
+
+Live demo: https://gavriankur.github.io/rinse-car-wash-wireframe/
+
+GitHub Pages deploys from main, root directory. The printed pitch QR points at the same URL and remains valid. This is a pitch demo; production needs commercial hosting, a backend and a database.
